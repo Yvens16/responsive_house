@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_circular_slider/flutter_circular_slider.dart';
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:flutter/rendering.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,6 +34,21 @@ class Home extends State<MyApp> {
                     animation: _animationName,
                   ),
                 ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(child: SingleCircularSlider(
+                      100,
+                      0,
+                      baseColor: Color(0xff558BC6),
+                      child: Padding(
+                        padding: const EdgeInsets.all(42.0),
+                        child: Center(
+                            child: Text('${6}',
+                                style: TextStyle(fontSize: 56.0, color: Color(0xff558BC6)))),
+                        ),
+                      ))
+                  ]),
                 Row(children: <Widget>[
                   FlatButton(
                     textColor: Color(0xff558BC6),
@@ -73,6 +90,7 @@ class Home extends State<MyApp> {
               ],
             ),
           ),
+          // child: Container(child: SingleCircularSlider(0, 50, 75, 100)),
         ),
       ),
     );
